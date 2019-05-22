@@ -18,7 +18,7 @@ class Team extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'division_id'
+        'name', 'division_id', 'block_team'
     ];
 
     /**

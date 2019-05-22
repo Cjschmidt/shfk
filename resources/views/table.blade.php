@@ -64,7 +64,7 @@
 </div>
 
 <div class="day">
-    <h1>Lørdag</h1>
+    <h1 style="margin-top:80px;">Lørdag</h1>
 @foreach($dayTwo as $ship)
         <div class="table-wrapper">
             <h2>{{$ship['name']}}</h2>

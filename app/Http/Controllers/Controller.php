@@ -23,15 +23,13 @@ class Controller extends BaseController
     {
 
         $this->clearDB();
-        $division_id = 3;
+        $division_id = 1;
 
-        $teams = \App\Team::where('division_id', $division_id)->whereNotIn('id', [32,33,13])->get()->shuffle();
+        $teams = \App\Team::where('division_id', $division_id)->get()->shuffle();
 
         $this->dayTwo($teams);
 
     }
-
-
 
     function dayTwo($teams)
     {
@@ -173,7 +171,8 @@ class Controller extends BaseController
 
         ShipTeamDays::where('day',2)->delete();
 
-        DB::table('ships')->update(array('slots_day_two' => 12));
+        DB::table('ships')->whereIn('id', [1,4,5])->update(array('slots_day_two' => 12));
+        DB::table('ships')->whereIn('id', [2,3])->update(array('slots_day_two' => 14));
 
     }
 }
