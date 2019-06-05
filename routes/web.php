@@ -711,8 +711,7 @@ Route::get('/day-one', function () {
     \App\ShipTeamDays::where('day',1)->delete();
     \App\ShipTeamDays::where('day',2)->delete();
 
-    DB::table('ships')->whereIn('id', [1,4,5])->update(array('slots' => 12));
-    DB::table('ships')->whereIn('id', [2,3])->update(array('slots' => 14));
+    DB::table('ships')->whereIn('id', [1,2,3,4,5])->update(array('slots' => 12));
 
     $division_id = 1;
 

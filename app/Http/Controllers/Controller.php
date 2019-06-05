@@ -171,8 +171,7 @@ class Controller extends BaseController
 
         ShipTeamDays::where('day',2)->delete();
 
-        DB::table('ships')->whereIn('id', [1,4,5])->update(array('slots_day_two' => 12));
-        DB::table('ships')->whereIn('id', [2,3])->update(array('slots_day_two' => 14));
+        DB::table('ships')->whereIn('id', [1,2,3,4,5])->update(array('slots_day_two' => 12));
 
     }
 }
